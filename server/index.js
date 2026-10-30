@@ -2152,8 +2152,8 @@ app.use((req, res, next) => {
   res.sendFile(path.join(distPath, 'index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log(`Resource Allocation CRM Server running on http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Resource Allocation CRM Server running on port ${PORT}`);
 });
 
 

@@ -1,7 +1,7 @@
 # ==========================================
 # 1. Build React Client (Vite)
 # ==========================================
-FROM node:20-slim AS frontend-builder
+FROM node:22-bookworm-slim AS frontend-builder
 WORKDIR /app/client
 
 COPY client/package*.json ./
@@ -13,7 +13,7 @@ RUN npm run build
 # ==========================================
 # 2. Production Runner (Node + Express + SQLite)
 # ==========================================
-FROM node:20-slim AS runner
+FROM node:22-bookworm-slim AS runner
 WORKDIR /app
 
 # Install native compilation dependencies for better-sqlite3

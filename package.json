@@ -8,5 +8,8 @@
     "seed": "node server/seed.js",
     "server": "cd server && node index.js",
     "client": "cd client && npm run dev"
+  },
+  "engines": {
+    "node": ">=22"
   }
 }
