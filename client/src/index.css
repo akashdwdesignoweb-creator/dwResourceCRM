@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  html {
+    color-scheme: light;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    letter-spacing: -0.011em;
+    background: #F8FAFC;
+  }
+}
+
+/* Refined Scrollbars */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e1;
+}
+
+/* Glass Navbar - Designoweb Midnight Navy */
+.glass-header {
+  background: #0A0F23;
+}
+
+/* Card elevation system */
+.card-elevated {
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.05), 0 1px 2px -1px rgba(0,0,0,0.04);
+}
+.card-elevated-md {
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+}
+
+/* Subtle hover lift with warm brand accent */
+.card-hover {
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-hover:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px -4px rgba(243,112,27,0.12), 0 4px 8px -4px rgba(0,0,0,0.06);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.animate-slideInRight {
+  animation: slideInRight 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Table hover row */
+.table-row-hover {
+  transition: background-color 0.1s ease;
+}
+.table-row-hover:hover {
+  background-color: rgba(248, 250, 252, 0.8);
+}
+
+/* Active nav indicator - Designoweb Flame Orange */
+.nav-active {
+  position: relative;
+}
+.nav-active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 60%;
+  width: 2px;
+  background: #F3701B;
+  border-radius: 0 2px 2px 0;
+}
+
+/* Designoweb Focus Ring */
+.focus-dw:focus {
+  outline: none;
+  ring: 2px;
+  ring-color: #F3701B;
+  ring-offset: 2px;
+}
+
+/* Designoweb Official Brand Gradients & Buttons */
+.dw-gradient {
+  background: linear-gradient(135deg, #F3701B 0%, #D30902 100%);
+}
+.dw-gradient-text {
+  background: linear-gradient(135deg, #F3701B 0%, #D30902 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.dw-btn-primary {
+  background: linear-gradient(135deg, #F3701B 0%, #ED6208 100%);
+  color: #ffffff;
+  transition: all 0.15s ease-in-out;
+}
+.dw-btn-primary:hover {
+  background: linear-gradient(135deg, #ED6208 0%, #D30902 100%);
+  box-shadow: 0 4px 14px rgba(243, 112, 27, 0.35);
+}
+
+/* Enterprise table */
+.enterprise-table thead th {
+  @apply px-4 py-3 text-left text-[11px] font-semibold text-slate-500 uppercase tracking-wider bg-slate-50 border-b border-slate-200;
+}
+.enterprise-table tbody td {
+  @apply px-4 py-3 text-sm text-slate-600 border-b border-slate-100;
+}
+.enterprise-table tbody tr:hover {
+  @apply bg-slate-50/60;
+}
+.enterprise-table tbody tr:last-child td {
+  @apply border-b-0;
+}
+
+/* Designoweb Editorial Serif */
+.font-editorial {
+  font-family: 'Newsreader', 'Playfair Display', Georgia, Cambria, 'Times New Roman', serif;
+}

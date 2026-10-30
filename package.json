@@ -1,0 +1,12 @@
+{
+  "name": "dw-resource-crm",
+  "version": "1.0.0",
+  "description": "Role-Based Resource Allocation, Projects & Scorecards CRM",
+  "scripts": {
+    "start": "node server/index.js",
+    "seed": "node server/seed.js",
+    "server": "cd server && node index.js",
+    "client": "cd client && npm run dev",
+    "build": "cd client && npm run build"
+  }
+}
